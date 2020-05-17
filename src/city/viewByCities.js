@@ -1,4 +1,4 @@
-﻿const dataURL = "../src/OurDataBase.json";
+﻿
 const locationsDataset=  getLocationsDataFromLocalStorage();
 const countries=  getCountriesDataFromLocalStorage();
 const culumnNames= getCulumnNamesDataFromLocalStorage();

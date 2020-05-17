@@ -1,5 +1,5 @@
 
-
+const dataURL = "../src/OurDataBase.json";
 
 window.addEventListener('load', (event) => {
     var xhttp = new XMLHttpRequest();
