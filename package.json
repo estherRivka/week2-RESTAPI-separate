@@ -1,0 +1,18 @@
+{
+    "name": "brix-bootcamp-template",
+    "description": "",
+    "main": "",
+    "scripts": {
+        "build": "webpack",
+        "start": "webpack-dev-server --open"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-loader": "^2.2.1",
+        "webpack": "^4.27.1",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.11.0"
+    }
+}

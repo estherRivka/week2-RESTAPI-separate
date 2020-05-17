@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="viewByPatient.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   
+</head>
+
+<body>
+    <input id="patientIdInp" type="text" placeholder ="Patient Id">
+    <input id="viewLocationTableBtn" type="button" value="Locations" disabled="true" />
+<hr />
+<div id="tableDv"></div>
+<div id="addLocationDv" style="display: none;">
+    <!-- <input class="addLocationInput" id="startDateTxt" type="text" style="width: 73px;"> -->
+    <input class="addLocationInp"   id="startDateInp" type="date">   
+    <input class="addLocationInp" id="endDateInp" type="date" >
+    <input class="addLocationInp" id="cityInp" type="text" >
+    <input class="addLocationInp" id="locationInp" type="text" >
+     <button id="addLocationBtn">Add Location</button>
+     <a href="../../index.html" class="button" > Go Back To Home Page</a>
+
+</div>
+    <script src="../../dist/patient.js"></script>
+</body>
+</html>
