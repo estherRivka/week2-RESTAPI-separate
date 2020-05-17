@@ -8,6 +8,7 @@ function getLocationsDataFromLocalStorage()
 {
   return  JSON.parse(localStorage.getItem('locationsDataset'));
 }
+
 function getCulumnNamesDataFromLocalStorage()
 {
   return  JSON.parse(localStorage.getItem('culumnNames'));
