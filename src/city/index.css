@@ -18,8 +18,9 @@ h1 {
 }
 #sortTableByDate{
   position: relative;
-  top:50px;
-  left:545px;
+  top:85px;
+  left:595px;
+  width:100px;
 }
 input {
   border: 1px solid transparent;
@@ -71,7 +72,7 @@ input[type=submit] {
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
- 
+  width:200px;
 }
 #backToHomePage{
 position: relative;
