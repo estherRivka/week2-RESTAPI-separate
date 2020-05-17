@@ -1,18 +1,8 @@
 "use strict";
-const locationDataUrl = "../OurDataBase.json";
-
-// function setDataInLocalStorage(response)
-// {
-//     localStorage.setItem('locationsDataset',JSON.stringify((response).locations));
-//     localStorage.setItem('culumnNames',JSON.stringify((response).columnNames));
-//     localStorage.setItem('countries',JSON.stringify((response).countries));
-//     localStorage.setItem('columnKeys',JSON.stringify((response).columnKeys));
-
-// }
 
 getDataFromLocalStorage()
     .then(configurePage)
-    .catch(() => { console.log("error retreiving data");});
+    .catch(() => { console.log("error retreiving data"); });
 
 function getDataFromLocalStorage() {
 
@@ -27,10 +17,8 @@ function getDataFromLocalStorage() {
 
 }
 
-
 function configurePage({ locations, columnNames, columnKeys }) {
     const currentPatientLocations = [];
-
     const patientIdInp = document.getElementById("patientIdInp");
     let patientId;
     if (patientIdInp !== null) {
@@ -64,7 +52,6 @@ function configurePage({ locations, columnNames, columnKeys }) {
     }
 
     function SetViewLocationBtnAvailability(isValidPatientId) {
-
         if (isValidPatientId === false) {
             viewLocationTableBtn.disabled = true;
         }
@@ -89,12 +76,8 @@ function configurePage({ locations, columnNames, columnKeys }) {
             return location.patientId === currentPatientId;
         });
         return currentPatientLocations;
-
-        //Remove current patients locations for editing
-        // locationData.locations = locationData.locations.filter(function (location) {
-        //     return location.patientId !== currentPatientId;
-        // });
     }
+
     function buildLocationTable(currentPatientLocations, columnNames, columnKeys) {
         const columnCount = columnNames.length;
 
@@ -136,7 +119,6 @@ function configurePage({ locations, columnNames, columnKeys }) {
     }
 
     function addRowToTable(table, newLocation, currentPatientLocations, columnKeys) {
-
         const row = table.insertRow(-1);
 
         for (let key of columnKeys) {
@@ -153,9 +135,8 @@ function configurePage({ locations, columnNames, columnKeys }) {
         deleteCell.appendChild(deleteBtn);
 
     }
+    
     function sortLocationTableByColumn(currentPatientLocations, columnNames, columnKeys, columnIndex) {
-        //sort dataObj locations
-
         const sortByKey = columnKeys[columnIndex];
         currentPatientLocations.sort((a, b) => a.locationdetails[sortByKey].localeCompare(b.locationdetails[sortByKey]));
 
@@ -201,7 +182,7 @@ function configurePage({ locations, columnNames, columnKeys }) {
             };
 
 
-            let locationsTable = document.getElementById("locationsTable");
+            const locationsTable = document.getElementById("locationsTable");
             addRowToTable(locationsTable, newLocation, currentPatientLocations, columnKeys);
 
             //add location to data
@@ -225,7 +206,6 @@ function configurePage({ locations, columnNames, columnKeys }) {
         currentPatientLocations.splice(index - 1, 1);
 
     }
-    // createAutoCompleteCity();
 }
 
 
