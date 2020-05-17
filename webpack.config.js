@@ -3,9 +3,9 @@ const path = require('path');
 module.exports = {
     
     entry: {
-        index:'./src/city/viewByCities.js',
-        patient:'./src/patient/viewByPatient.js',
-        home:'./src/home/homePage.js'},
+        index:'./src/city/index.js',
+        patient:'./src/patient/index.js',
+        home:'./src/home/index.js'},
     output: {
         filename: '[name].js',
         // filename: 'bundle.js',
