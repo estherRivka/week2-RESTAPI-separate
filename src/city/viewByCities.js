@@ -2,7 +2,7 @@
 const locationsDataset=  getLocationsDataFromLocalStorage();
 const countries=  getCountriesDataFromLocalStorage();
 const culumnNames= getCulumnNamesDataFromLocalStorage();
-  window.addEventListener('load',loadHtmlPage);
+window.addEventListener('load',loadHtmlPage);
  
 function getLocationsDataFromLocalStorage()
 {
@@ -13,6 +13,7 @@ function getCulumnNamesDataFromLocalStorage()
 {
   return  JSON.parse(localStorage.getItem('culumnNames'));
 }
+
 function  getCountriesDataFromLocalStorage()
 {
     return JSON.parse(localStorage.getItem('countries'));
@@ -21,12 +22,15 @@ function  getCountriesDataFromLocalStorage()
 function isNotNull(element) {
     return (element===null) ? false : true;
 }
+
 function visualizitionOfElement(element,status){
 element.style.visibility = status;
 }
+
 function statusOfElement(element,status){
     element.disabled = status;
  }
+
 function loadHtmlPage() {
     if (isNotNull(document.getElementById("sortTableByDate"))===true) {
         const SortBtn = document.getElementById("sortTableByDate");
@@ -49,6 +53,7 @@ function loadHtmlPage() {
     if (isNotNull(document.getElementById("getAllLocations"))===true)
         document.getElementById("getAllLocations").addEventListener("click", function (){
             getAllLocationsOfPatience(locationsDataset);});
+  
     if (isNotNull(document.getElementById("citySearchDiv"))===true) {
       visualizitionOfElement( document.getElementById("citySearchDiv"),"hidden"); 
       
@@ -57,6 +62,7 @@ function loadHtmlPage() {
 
 }
 }
+
 function createTable(locationsDataset) {
     const tableOnPage = document.getElementById('LocationsOfPatienceTable');
     if (tableOnPage !== null) {
@@ -105,6 +111,7 @@ function createTable(locationsDataset) {
         table.appendChild(tBody);
         b.appendChild(table);
     }
+  
     else {
         if (isNotNull(document.getElementById("sortTableByDate"))===true)
         statusOfElement( document.getElementById("sortTableByDate"),true);
@@ -115,6 +122,7 @@ function createTable(locationsDataset) {
         alert("There where No Results For Your Search!");
     }
 }
+
 function getAllLocationsOfPatience(locationsDataset) {
     if(isNotNull(document.getElementById("myInput"))===null);
     document.getElementById("myInput").value="";
@@ -126,6 +134,7 @@ function getAllLocationsOfPatience(locationsDataset) {
     createTable(locationsDataset);
     
 }
+
 function sortTableByDate(currentTable) {
     if (locationsDataset.length > 1) {
         var  rows, switching, i, x, y, shouldSwitch;
@@ -199,6 +208,7 @@ function autocomplete(inp, arr) {
             }
         }
     });
+  
     function addActive(x) {
         if (!x) return false;
         removeActive(x);
@@ -206,11 +216,13 @@ function autocomplete(inp, arr) {
         if (currentFocus < 0) currentFocus = (x.length - 1);
         x[currentFocus].classList.add("autocomplete-active");
     }
+  
     function removeActive(x) {
         for (let i = 0; i < x.length; i++) {
             x[i].classList.remove("autocomplete-active");
         }
     }
+  
     function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
         if (isNotNull(x)===true) {
@@ -226,6 +238,7 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
+
 function showResultsFilterdByCity(city) {
     const citiesSortedByInput = [];
     
