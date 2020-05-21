@@ -1,7 +1,5 @@
 "use strict";
 const patientControllerURL = "http://localhost:6060/patient"
-
-const patientControllerURL = "patient"
 const columnNames = ["Start Date", "End Date", "City", "Location"];
 const columnKeys = ["startDate", "endDate", "city", "location"];
 let currentPatient = null;
