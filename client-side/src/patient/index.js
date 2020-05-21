@@ -1,12 +1,12 @@
 "use strict";
-const patientControllerURL = "http://localhost:6060/patient"
+const patientControllerURL = "http://localhost:6060/patient";
 const columnNames = ["Start Date", "End Date", "City", "Location"];
 const columnKeys = ["startDate", "endDate", "city", "location"];
 let currentPatient = null;
 
 window.onload = function () {
     configurePage(columnNames, columnKeys, patientControllerURL, currentPatient);
-}
+};
 
 function getLocationsByPatientId(currentPatientId, url) {
 
@@ -21,12 +21,12 @@ function getLocationsByPatientId(currentPatientId, url) {
             if (this.readyState == 4 && this.status !== 200) {
                 reject("an error accured retrieving data");
             }
-        }
+        };
         xhttp.open("GET", `${url}/${currentPatientId}`);
         xhttp.send();
     });
 
-};
+}
 
 function updatePatient(updatedPatient, url) {
 
@@ -41,14 +41,14 @@ function updatePatient(updatedPatient, url) {
             if (this.readyState == 4 && this.status !== 200) {
                 reject("an error accured updating");
             }
-        }
+        };
         xhttp.open("PUT", url);
         xhttp.setRequestHeader('Content-Type', 'application/json');
         xhttp.setRequestHeader('Accept', 'application/json');
-        xhttp.send(JSON.stringify(updatedPatient))
+        xhttp.send(JSON.stringify(updatedPatient));
     });
 
-};
+}
 
 
 
@@ -106,7 +106,7 @@ function configurePage(columnNames, columnKeys, patientURL, currentPatient) {
             return false;
         }
     }
-};
+}
 
 
 
@@ -222,7 +222,7 @@ async function addLocation(currentPatient, columnKeys) {
         addRowToTable(locationsTable, newLocation, currentPatient, columnKeys);
 
         currentPatient.paths.push(newLocation);
-        const response = await updatePatient(currentPatient, "patient");
+        const response = await updatePatient(currentPatient,"http://localhost:6060/patient");
         console.log(response);
 
 
@@ -241,7 +241,7 @@ function deleteLocation(currentPatient, rowToDelete) {
 
     currentPatient.paths.splice(index - 1, 1);
 
-    updatePatient(currentPatient, "patient");
+    updatePatient(currentPatient, "http://localhost:6060/patient");
 
 }
 

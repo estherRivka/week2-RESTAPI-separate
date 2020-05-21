@@ -33,8 +33,11 @@ namespace week2
                 options.AddPolicy("Policy1",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:8080",
-                                            "http://www.contoso.com");
+                    builder.WithOrigins("http://localhost:8080");
+              
+                        builder.AllowAnyHeader();
+                      builder.WithMethods("GET", "POST", "PUT");
+                       
                     });
 
             });
