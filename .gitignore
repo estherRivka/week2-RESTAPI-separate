@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules
 dist
 ## Ignore Visual Studio temporary files, build results, and
@@ -360,4 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+=======
+client-side/node_modules
+client-side/dist
+>>>>>>> 7d9b923f9f12c4bb811180da06ae49fb748f0e56
 
