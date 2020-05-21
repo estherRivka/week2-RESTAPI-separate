@@ -12,7 +12,7 @@ window.addEventListener('load', loadHtmlPage);
 function getAllLocationsFromServer() {
     return new Promise((resolve, reject) => {
         $.ajax({
-            url: "api/paths", success: function (result) {
+            url: "http://localhost:6060/path", success: function (result) {
                 resolve(result);
             },
             error: function (result) {
@@ -26,7 +26,7 @@ function getAllLocationsFromServer() {
 function getLocationsFromServerByCity(city) {
     return new Promise((resolve, reject) => {
         $.ajax({
-            url: "api/paths/" + city, success: function (result) {
+            url: "http://localhost:6060/path/" + city, success: function (result) {
                 resolve(result);
             },
             error: function (result) {
