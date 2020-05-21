@@ -12,3 +12,4 @@ The project packages are now installed in the **node_modules** folder.
 7. Run the following command: `> npm start`\
 Now your project is running at http://localhost:8080/. \
 Use this command to run the project next time.
+# week2-RESTAPI-separate
